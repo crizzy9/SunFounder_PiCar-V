@@ -44,12 +44,14 @@ def run(request):
 			bw_status = 0
 		elif action == 'forward':
 			bw.speed = SPEED
-			bw.forward()
+			#bw.forward()
+                        bw.backward()
 			bw_status = 1
 			debug = "speed =", SPEED
 		elif action == 'backward':
 			bw.speed = SPEED
-			bw.backward()
+			#bw.backward()
+                        bw.forward()
 			bw_status = -1
 		elif action == 'stop':
 			bw.stop()
@@ -148,3 +150,4 @@ def cali(request):
 
 def connection_test(request):
 	return HttpResponse('OK')
+
